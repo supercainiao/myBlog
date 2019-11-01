@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+  <title>test</title>
+  <script type="text/javascript">
+    (function () {
+      var refreshRem = function () {
+          document.documentElement.style.fontSize = document.documentElement.clientWidth / 375 * 16 + 'px';
+      };
+      refreshRem();
+      var timeID;
+      window.addEventListener("resize", function () {
+        clearTimeout(timeID); //防止执行两次
+        timeID = setTimeout(refreshRem, 300);
+      }, false);
+      window.addEventListener("pageshow", function (evt) {
+        //浏览器后退时重新计算
+        if (evt.persisted) {
+          clearTimeout(timeID);
+          timeID = setTimeout(refreshRem, 300);
+        }
+      }, false);
+    })();
+
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="/dist/build.js"></script>
+</body>
+
+</html>
