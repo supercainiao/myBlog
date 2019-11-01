@@ -5,7 +5,7 @@
     <navigation v-show="!isLogOrRegister" class="navigation"></navigation>
     <router-view></router-view>
   </div>
-</template>
+</template> 
 
 <script>
 import $ from 'jquery';
