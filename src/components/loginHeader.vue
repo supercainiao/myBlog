@@ -5,7 +5,7 @@
                 <img src="../assets/img/search.png" alt="">
             </i>
         </router-link>
-        <span class="middleFont">SuperCainiao</span>
+        <span class="middleFont" @click="routerMianView">SuperCainiao</span>
         <router-link to="/user/login">
             <i class="login">
                 <img src="../assets/img/load.png" alt="">
@@ -16,7 +16,12 @@
 <script>
 
 export default {
-
+    methods:{
+        routerMianView() {
+            this.$router.push({name:'recommend'});
+        }
+    }
+     
 }
 </script>
 
