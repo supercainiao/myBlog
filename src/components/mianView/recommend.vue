@@ -9,10 +9,42 @@
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 snsiadha
             </div>
-            <div class="article-info">
-                <span>赞</span>
-                <span>x'x'x</span>
-                <span>11：30</span>
+            <div class="article-info" id="infoItems">
+                <span class="box1">
+                    <img style="margin-bottom: 1px;" src="../../assets/img/awesome.png" alt="" srcset="">
+                    <span>56</span>
+                </span>
+                <span class="box">
+                    <img src="../../assets/img/comment2.png" alt="" srcset="">
+                    <span>12</span>
+                </span>
+                <span class="info">xxxxx</span>
+                <span class="info">11：30</span>
+            </div>
+
+        </div>
+
+
+        <div class="new-item">
+            <div class="item-title">
+                <h4>dsfweefv</h4>
+            </div>
+            <div class="article" >
+                dcvgbvdfgvdsws
+                asdasdas
+                snsiadha
+            </div>
+            <div class="article-info" id="infoItems">
+                <span class="box1">
+                    <img style="margin-bottom: 1px;" src="../../assets/img/awesome.png" alt="" srcset="">
+                    <span>56</span>
+                </span>
+                <span class="box">
+                    <img src="../../assets/img/comment2.png" alt="" srcset="">
+                    <span>12</span>
+                </span>
+                <span class="info">xxxxx</span>
+                <span class="info">11：30</span>
             </div>
 
         </div>
@@ -27,6 +59,35 @@ export default {
 </script>
 
 <style scoped>
+    .info{
+        color: #b2bac2;
+        vertical-align: bottom;
+    }
+    #infoItems>>>img{
+        width: 1rem;
+        height: 1rem;
+        vertical-align: text-bottom;
+    }
+    .box1 {
+        border: 1px solid #edeeef;
+        display: inline-block;
+        width: 3.5rem;
+        height: 1.125rem;
+        vertical-align: middle;
+        text-align: center;
+        color: #b2bac2;
+    }
+    .box {
+        border: 1px solid #edeeef;
+        display: inline-block;
+        width: 3.5rem;
+        height: 1.125rem;
+        margin-left: -0.3125rem;
+        vertical-align: middle;
+        text-align: center;
+        color: #b2bac2;
+        
+    }
     .article-info{
         color: #666;
         font-size: 13px;
