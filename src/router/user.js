@@ -1,5 +1,6 @@
 import login from '../components/login.vue';
 import recommend from '../components/mianView/recommend'
+import detailpage from '../components/mianView/detailPage'
 
 export default [
     {
@@ -21,5 +22,10 @@ export default [
         name:'recommend',
         path: '/recommend',
         component: recommend
+    },
+    {
+        name:'detailpage',
+        path: '/recommend/detailpage',
+        component: detailpage
     }
 ]

@@ -1,20 +1,20 @@
 <template>
     <div class="new-list">
         <div class="new-item">
-            <div class="item-title">
-                <h4>xxxxxx</h4>
+            <div class="item-title" >
+                <h4 class="widthClick" @click="toDetail">xxxxxx</h4>
             </div>
-            <div class="article" >
+            <div class="article" @click="toDetail">
                 dsadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
                 snsiadha
             </div>
             <div class="article-info" id="infoItems">
-                <span class="box1">
+                <span class="box1" @click="praise">
                     <img style="margin-bottom: 1px;" src="../../assets/img/awesome.png" alt="" srcset="">
                     <span>56</span>
                 </span>
-                <span class="box">
+                <span class="box" @click="comment">
                     <img src="../../assets/img/comment2.png" alt="" srcset="">
                     <span>12</span>
                 </span>
@@ -54,11 +54,30 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+
+        }
+    },
+    methods:{
+        toDetail() {
+            // this.$router.push()
+            this.$router.push({name:'detailpage'});
+        },
+        praise() {
+            console.log(666)
+        },
+        comment() {
+            
+        }
+    }
 }
 </script>
 
 <style scoped>
+    .widthClick{
+        display: inline-block;
+    }
     .info{
         color: #b2bac2;
         vertical-align: bottom;

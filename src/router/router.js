@@ -12,6 +12,4 @@ const router = new Router({
     routes:routes
 });
 
-
-
 export default router;

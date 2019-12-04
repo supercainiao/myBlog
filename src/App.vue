@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <loginHeader v-show="!isLogOrRegister" class="loginHeader"></loginHeader>
-    <swipe v-show="!isLogOrRegister" class="myAppSwipe"></swipe> 
-    <navigation v-show="!isLogOrRegister" class="navigation"></navigation>
+    <div class="isShow" v-show="showHeader">
+      <loginHeader class="loginHeader"></loginHeader>
+      <swipe class="myAppSwipe"></swipe> 
+      <navigation class="navigation"></navigation>
+    </div>
     <router-view></router-view>
   </div>
 </template> 
@@ -25,8 +27,9 @@ export default {
     navigation
   },
   computed:{
-    isLogOrRegister() {
-      return this.$route.path === '/user/login' || this.$route.path === '/user/register'  
+    showHeader() {
+      // return this.$route.path === '/user/login' || this.$route.path === '/recommend/detailpage' || this.$route.path === '/user/register'  
+      return this.$store.getters.isShowHeader;
     }
   },
   methods:{
@@ -45,7 +48,13 @@ export default {
     }
   }, watch: {
         '$route' (to, from) {
-            console.log(to);
+            // let names = ['login','register','detailpage'];
+            // if(names.includes(to.name))
+            //   this.$store.commit('changeHeader',false);
+            // else
+            //   this.$store.commit('changeHeader',true);
+            
+            // console.log(to);
         }
     }
 }
