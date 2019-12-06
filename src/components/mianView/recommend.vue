@@ -68,7 +68,7 @@ export default {
             console.log(666)
         },
         comment() {
-            
+            this.$router.push()
         }
     }
 }
@@ -95,6 +95,7 @@ export default {
         vertical-align: middle;
         text-align: center;
         color: #b2bac2;
+        cursor: pointer;
     }
     .box {
         border: 1px solid #edeeef;
@@ -105,6 +106,7 @@ export default {
         vertical-align: middle;
         text-align: center;
         color: #b2bac2;
+        cursor: pointer;
         
     }
     .article-info{
