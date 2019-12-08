@@ -15,7 +15,7 @@ Vue.use(Mint);
 console.log(config)
 let store = new Vuex.Store(config);
 router.afterEach((to, from) => {
-    let names = ['login','register','detailpage'];
+    let names = ['login','register','detailpage','search'];
     if(names.includes(to.name))
       store.commit('changeHeader',false);
     else

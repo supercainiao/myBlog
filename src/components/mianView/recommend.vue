@@ -68,7 +68,7 @@ export default {
             console.log(666)
         },
         comment() {
-            this.$router.push()
+            this.$router.push('/recommend/detailpage#comment')
         }
     }
 }
@@ -76,6 +76,7 @@ export default {
 
 <style scoped>
     .widthClick{
+        cursor: pointer;
         display: inline-block;
     }
     .info{
@@ -122,6 +123,7 @@ export default {
         padding: 0 0 0.9375rem 0;
     }
     .article{
+        cursor: pointer;
         margin-bottom: 0.9375rem;
         overflow: hidden;
         text-overflow: ellipsis;

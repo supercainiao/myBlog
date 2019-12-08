@@ -19,6 +19,9 @@ export default {
     methods:{
         routerMianView() {
             this.$router.push({name:'recommend'});
+        },
+        search() {
+            
         }
     }
      
@@ -57,6 +60,7 @@ export default {
         vertical-align: initial;
     }
     .middleFont{
+        cursor: pointer;
         position: absolute;
         top:50%;
         left: 50%;
