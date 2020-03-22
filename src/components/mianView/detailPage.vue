@@ -62,22 +62,39 @@
             </div>
             <div class="commentList">
                 <div class="commentItem">
-                    <div style="display: flex;">
-                        <div class="userIcon">
-                            <img src="../../assets/img/colorIcon.png" alt="">
-                        </div>
-                        <div class="commentText">
-                            <span style="font-size:15px;display:inline-block;">title</span>
-                            <span class="contentText">xxxxxxxxxxxxxxxxxxxxxxxsssssssssssssssssssssssssss</span>
+                    <div>
+                        <div style="display: flex;">
+                            <div class="userIcon">
+                                <img src="../../assets/img/colorIcon.png" alt="">
+                            </div>
+                            <div class="commentText">
+                                <span style="font-size:15px;display:inline-block;">title</span>
+                                <span class="contentText">xxxxxxxxxxxxxxxxxxxxxxxsssssssssssssssssssssssssss</span>
+                            </div>
                         </div>
                     </div>
+                   
                     <div class="commentButton clearfix">
                         <span class="leftTime">2019</span>
                         <span class="rightButton clearfix">
                             <img class="commentZan" src="../../assets/img/awesome.png"></img>
                             <img class="comentReply" src="../../assets/img/repy.png"></img>
-                            <span style="vertical-align:text-bottom;font-size:12px;">回复</span>
+                            <span style="vertical-align:text-bottom;font-size:12px;" @click="replyToComment">回复</span>
                         </span>
+                    </div>
+                    <div class="sub-comment-list fr clearfix"><!-- 回复 回复列表  -->
+                        <div>
+                            <span class="replyavatar" :style="{backgroundImage: 'url(' + defaultavatar + ')'}"></span>
+                            <div class="infoblock">
+                                <div class="replyname">xxxxx</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="articlereply">
+                            dsndnsodnsiondisoooooooooooooooo
+                            dsmpdsmpooooooo
+                            dspod
+                        </div>
                     </div>
                 </div>
             </div>
@@ -118,12 +135,38 @@ export default {
         },
         hideComment() {
             this.submit = false;
+        },
+        replyToComment(){
+
         }
     }
 }
 </script>
 
 <style scoped>
+    .articlereply{
+        word-wrap: break-word;
+        font-size: 12px;
+    }
+    .replyavatar{
+        margin-right: 0.9375rem;
+        float: left;
+        display: block;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        border-radius: 50%;
+        background-size: 1.5625rem 1.5625rem;
+    }
+    .replyname{
+        font-size: 12px;
+    }
+    .sub-comment-list{
+        width: 16.25rem;
+        margin: 1rem 0;
+        padding: 0 0 0 1rem;
+        background-color: #fafbfc;
+        border-radius: 3px;
+    }
     .commentZan{
         height: 16px;
         width: 16px;

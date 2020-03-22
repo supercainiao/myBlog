@@ -41,6 +41,11 @@ export default {
     },
     mounted() {
         this.isLogin = this.$route.path === "/user/login";
+        this.$axios
+            .get('/api/blog/list')
+            .then(function (response) {
+                console.log(response);
+            })
     },
     computed:{
        
