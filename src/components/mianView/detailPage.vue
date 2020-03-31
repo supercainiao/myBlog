@@ -78,22 +78,28 @@
                         <span class="leftTime">2019</span>
                         <span class="rightButton clearfix">
                             <img class="commentZan" src="../../assets/img/awesome.png"></img>
-                            <img class="comentReply" src="../../assets/img/repy.png"></img>
-                            <span style="vertical-align:text-bottom;font-size:12px;" @click="replyToComment">回复</span>
+                            <img class="comentReply clickOther" @click="replyToComment" src="../../assets/img/repy.png"></img>
+                            <span class="clickOther" style="vertical-align:text-bottom;font-size:12px;" @click="replyToComment">回复</span>
                         </span>
                     </div>
+                    <div class="replyInput fr replyItems clickOther" v-show="replyShow">
+                        <input type="text" ref="replyInput" class="insert replyInsert clickOther" v-model="replyContent">
+                        <mt-button class="submitButton replyButton clickOther" @click="replySubmit" :style="{'background-color': ison ? '#26a2ff' : '#95c3e6'}" type="primary" size="small">评论</mt-button>
+                    </div>
                     <div class="sub-comment-list fr clearfix"><!-- 回复 回复列表  -->
-                        <div>
-                            <span class="replyavatar" :style="{backgroundImage: 'url(' + defaultavatar + ')'}"></span>
-                            <div class="infoblock">
-                                <div class="replyname">xxxxx</div>
+                        <div class="replyItems">
+                            <div>
+                                <span class="replyavatar" :style="{backgroundImage: 'url(' + defaultavatar + ')'}"></span>
+                                <div class="infoblock">
+                                    <div class="replyname">xxxxx</div>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <div class="articlereply">
-                            dsndnsodnsiondisoooooooooooooooo
-                            dsmpdsmpooooooo
-                            dspod
+                            <br>
+                            <div class="articlereply">
+                                dsndnsodnsiondisoooooooooooooooo
+                                dsmpdsmpooooooo
+                                dspod
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,6 +119,8 @@ export default {
             defaultavatar:defaultavatar,
             submit:false,
             commentText:'',
+            replyContent:'',
+            replyShow:false,
             avatarList:[
                 
             ]
@@ -120,11 +128,18 @@ export default {
     },
     computed:{
         ison() {
-            return this.commentText.trim();
+            return this.commentText.trim('.commentItem');
         }
     },
     components:{
         loginHeader
+    },
+    mounted (){
+        $(document).click(e => {
+            if(!$(e.target).hasClass('clickOther'))
+                this.replyShow = false;
+            
+        })
     },
     methods:{
         focusInput(e) {
@@ -136,7 +151,10 @@ export default {
         hideComment() {
             this.submit = false;
         },
-        replyToComment(){
+        replyToComment(e){
+            this.replyShow = true;
+        },
+        replySubmit() {
 
         }
     }
@@ -144,6 +162,31 @@ export default {
 </script>
 
 <style scoped>
+    .replyButton{
+        margin-left: 70%;
+        margin-top: 0.625rem;
+    }
+    input.replyInsert{
+        /* border-radius: 0.3125rem; */
+        width: 90%;
+    }
+    input[type=text]:focus{ border: 1px solid #AFECAB; }
+    .replyInput{
+        width: 16.25rem;
+        margin: 1rem 0;
+        padding: 0 0 0 1rem;
+        background-color: #fafbfc;
+        border-radius: 3px;
+        height: 5.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .replyItems{
+        padding: 0.625rem 0 0.625rem 0;
+    }
     .articlereply{
         word-wrap: break-word;
         font-size: 12px;
@@ -221,6 +264,7 @@ export default {
         width: 100%;
         height: 2rem;
         padding: 0.5rem;
+        border-radius: 0.3125rem;
     }
     .commentGroup{
         margin: 1.25rem 1rem;
